@@ -8,10 +8,10 @@ import { debounceTime, takeUntil, tap } from 'rxjs/operators';
   styleUrls: ['./tweet-box.component.sass']
 })
 export class TweetBoxComponent implements OnInit, OnDestroy, AfterViewInit {
-
+  readonly MAXIMUM_WORDS_ALLOWED = 50;
   @ViewChild('tweetInput') inputEl: ElementRef;
   destroy$: Subject<boolean> = new Subject();
-  wordCount: number;
+  wordCount: number = 0;
   textArea: string;
 
   constructor() { }

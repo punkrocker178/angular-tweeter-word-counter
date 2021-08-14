@@ -1,0 +1,15 @@
+<div class="tweet-box-container">
+
+    <textarea data-test="tweet-area" class="tweet-area" #tweetInput></textarea>
+
+    <!-- <div id="board" class="original" contenteditable="true">
+        <span>word 1 </span>
+        <span>word 2 </span>
+        <span>word 3 </span>
+    </div> -->
+    <div class="d-flex flex-row tweet-btn-section">
+        <word-counter [maxCount]="MAXIMUM_WORDS_ALLOWED" [counter]="wordCount"></word-counter>
+        <button [disabled]="wordCount >= 50" class="tweet-btn">Tweet</button>
+    </div>
+    
+</div>

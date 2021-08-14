@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TweetBoxComponent } from './tweet-box/tweet-box.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { TweetBoxModule } from './components/tweet/components/tweet-box/tweet-box.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TweetBoxComponent,
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TweetBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
