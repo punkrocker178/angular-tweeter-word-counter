@@ -6,6 +6,12 @@ Demo app: https://punkrocker178.github.io/
   
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
+## Preview
+Counter counted 3 words
+![Counter counted 3 words](./src/assets/images/demo-1.png "Counter counted 3 words")
+  
+Counter counted 64 words then changed to red color and disabled the Tweet button
+![Counter counted 3 words](./src/assets/images/demo-2.png "Counter counted 64 words")
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
