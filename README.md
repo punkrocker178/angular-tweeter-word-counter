@@ -1,5 +1,9 @@
 # AngularWordCounter
 
+This project imitate twitter's character counter functionality but with a little change, it counts words.
+
+Demo app: https://punkrocker178.github.io/  
+  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 ## Development server
