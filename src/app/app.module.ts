@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { TweetBoxModule } from './components/tweet/components/tweet-box/tweet-box.module';
+import { TweetModule } from './components/tweet/tweet.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { TweetBoxModule } from './components/tweet/components/tweet-box/tweet-bo
   ],
   imports: [
     BrowserModule,
-    TweetBoxModule
+    TweetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

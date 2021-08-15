@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TweetBoxModule } from './components/tweet/components/tweet-box/tweet-box.module';
+import { TweetModule } from './components/tweet/tweet.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        TweetBoxModule
+        TweetModule
       ],
       declarations: [
         AppComponent

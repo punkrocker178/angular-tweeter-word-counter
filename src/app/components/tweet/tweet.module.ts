@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { WordCounter } from '../counter/word-counter.component';
-import { TweetBoxComponent } from './tweet-box.component';
+import { WordCounter } from './components/counter/word-counter.component';
+import { TweetBoxComponent } from './components/tweet-box/tweet-box.component';
 
 @NgModule({
   declarations: [
@@ -18,4 +18,4 @@ import { TweetBoxComponent } from './tweet-box.component';
     WordCounter
   ]
 })
-export class TweetBoxModule { }
+export class TweetModule { }

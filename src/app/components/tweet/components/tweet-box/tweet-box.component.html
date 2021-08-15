@@ -16,14 +16,17 @@
     </div>
 
     <ng-container *ngIf="tweetList.length > 0">
-        <div *ngFor="let tweet of tweetList" class="d-flex p-2">
+        <div *ngFor="let tweet of tweetList; let idx = index" class="d-flex p-2">
             <img class="avatar p-1" src="https://pbs.twimg.com/profile_images/1425662370513231884/F8UnZi7J_bigger.jpg">
             <div class="me-auto d-flex flex-column p-1">
-                <span>Hieu Le@HieuLe47390205</span>
+                <span class="fw-bold author">Hieu Le 
+                    <span class="fw-normal username">@HieuLe47390205</span>
+                </span>
+                
                 <span>{{tweet}}</span>
             </div>
             
-            <span class="cursor-pointer" (click)="tweetList.pop()">🗑️</span>
+            <span class="cursor-pointer" (click)="tweetList.splice(idx, 1)">🗑️</span>
         </div>
     </ng-container>
     
