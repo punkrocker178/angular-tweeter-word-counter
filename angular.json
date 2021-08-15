@@ -31,8 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/sass/styles.sass",
-              "src/assets/scss/skeleton.scss"
+              "src/assets/sass/styles.sass"
             ],
             "scripts": []
           },
@@ -100,8 +99,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/sass/styles.sass",
-              "src/assets/scss/skeleton.scss"
+              "src/assets/sass/styles.sass"
             ],
             "scripts": []
           }

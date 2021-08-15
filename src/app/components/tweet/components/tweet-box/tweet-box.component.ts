@@ -11,8 +11,13 @@ export class TweetBoxComponent implements OnInit, OnDestroy, AfterViewInit {
   readonly MAXIMUM_WORDS_ALLOWED = 50;
   @ViewChild('tweetInput') inputEl: ElementRef;
   destroy$: Subject<boolean> = new Subject();
+
+  isLoading: boolean;
+  wordRegex = /^[\W]*[\w]+[\W]*$/;
   wordCount: number = 0;
-  textArea: string;
+  textValue: string;
+
+  tweetList: string[] = [];
 
   constructor() { }
 
@@ -23,25 +28,37 @@ export class TweetBoxComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit() {
     fromEvent(this.inputEl.nativeElement, 'keyup').pipe(
       takeUntil(this.destroy$),
-      debounceTime(500),
+      debounceTime(300),
       tap((next: any) => {
-        console.log(next);
-        this.textArea = next.target.value;
-        let text = this.textArea.trim().replace(/\s+/g, ' ');
-        let words = text.split(' ');
-        let trueWords: any[] = [];
-
-        words.forEach(word => {
-          if ((/^[\W]*[\w]+[\W]*$/).test(word)) {
-            trueWords.push(word);
-          }
-        });
-
-        this.wordCount = trueWords.length;
-        console.log(trueWords, text);
+        this.isLoading = true;
+        this.countWord(next);
       })
 
-    ).subscribe();
+    ).subscribe(_ => {
+      setTimeout(() => this.isLoading = false, 400);
+    });
+  }
+
+  countWord(event: any) {
+    const textAreaValue = event.target.value;
+    let text = textAreaValue.trim().replace(/\s+/g, ' ');
+    let words = text.split(' ');
+    let trueWords: any[] = [];
+
+    words.forEach((word: string) => {
+      if (this.wordRegex.test(word)) {
+        trueWords.push(word);
+      }
+    });
+
+    this.wordCount = trueWords.length;
+  }
+
+  tweet() {
+    this.tweetList.push(this.textValue);
+    this.textValue = '';
+    this.wordCount = 0;
+    
   }
 
   ngOnDestroy() {

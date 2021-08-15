@@ -24,18 +24,33 @@ describe('TweetBoxComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should count The quick brown fox jumps over the lazy dog correctly 9 words ', waitForAsync (() => {
+  it(`should count string "The quick brown fox jumps over the lazy dog" correctly 9 words `, waitForAsync (() => {
 
-    const textArea: HTMLInputElement  = fixture.nativeElement.querySelector('[data-test="tweet-area"]');
+    const textArea: HTMLTextAreaElement  = fixture.nativeElement.querySelector('[data-test="tweet-area"]');
     textArea.value = 'The quick brown fox jumps over the lazy dog';
     textArea.dispatchEvent(new Event('keyup'));
-    const counter: HTMLSpanElement = fixture.nativeElement.querySelector('[data-test="word-counter"]');
+    const counter: HTMLElement = fixture.nativeElement.querySelector('[data-test="word-counter"]');
     
     fixture.whenStable().then(val => {
       fixture.detectChanges();
-      console.log(counter.innerText);
       expect(counter.innerText).toBe('9');
     });
     
   }));
+
+  it(`should count string "The   brown   jumps   the lazy  !" correctly 5 words `, waitForAsync (() => {
+
+    const textArea: HTMLTextAreaElement  = fixture.nativeElement.querySelector('[data-test="tweet-area"]');
+    textArea.value = 'The   brown   jumps   the lazy  !';
+    textArea.dispatchEvent(new Event('keyup'));
+    const counter: HTMLElement = fixture.nativeElement.querySelector('[data-test="word-counter"]');
+    
+    fixture.whenStable().then(val => {
+      fixture.detectChanges();
+      expect(counter.innerText).toBe('5');
+    });
+    
+  }));
+
+
 });

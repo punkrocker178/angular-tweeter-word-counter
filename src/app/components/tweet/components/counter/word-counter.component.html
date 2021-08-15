@@ -1,6 +1,6 @@
 <div class="counter-circle" [ngClass]="{
-    'counter-warning': counter >= 40 && counter < maxCount,
+    'counter-warning': counter >= (maxCount * warningLimit) && counter < maxCount,
     'counter-danger': counter >= maxCount
 }">
-    <span data-test="word-counter" class="counter fw-light">{{counter}}</span>
+    <span data-test="word-counter" class="counter">{{counter}}</span>
 </div>

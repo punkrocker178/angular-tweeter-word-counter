@@ -1,24 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import "fonts.sass"
 @import "./components/utilities.sass"
+@import "./components/form-input.sass"
+@import "./components/images.sass"
 
 header
     border-bottom: 1px solid
     border-bottom-color: #E1E1E1
-    margin-bottom: 5rem
+    margin-bottom: 2rem
+    padding: 1rem
+
+nav
     text-align: center
-    padding: 1.5rem
 
 body
     font-family: TwitterChirp, Arial, Helvetica, sans-serif !important
+    margin: 0
 
 .app-title
     margin-bottom: 0
+    margin-top: 0
+    font-size: 31px
     font-weight: 700
-
+    margin-right: .5rem
+    display: inline-block
 
 .container
     flex-wrap: wrap
-    padding-left: 5rem
-    padding-right: 5rem
-    
+    padding-left: 10vw
+    padding-right: 10vw
+
+.twitter-bird
+    fill: rgba(29, 161, 242, 1.00)
+    width: 30px
+    display: inline-block
+
+@media (min-width: 320px)
+    .container
+        flex-wrap: wrap
+        padding-left: 0
+        padding-right: 0
+
+@media (min-width: 768px)
+    .container
+        flex-wrap: wrap
+        padding-left: 5vw
+        padding-right: 5vw
+
+@media (min-width: 992px)
+    .container
+        flex-wrap: wrap
+        padding-left: 10vw
+        padding-right: 10vw

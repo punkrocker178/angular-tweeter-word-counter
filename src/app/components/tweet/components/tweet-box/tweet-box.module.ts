@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { WordCounter } from '../counter/word-counter.component';
 import { TweetBoxComponent } from './tweet-box.component';
@@ -9,7 +10,8 @@ import { TweetBoxComponent } from './tweet-box.component';
     WordCounter
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   exports: [
     TweetBoxComponent,

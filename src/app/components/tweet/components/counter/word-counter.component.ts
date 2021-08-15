@@ -5,14 +5,11 @@ import { Component, Input, OnInit} from '@angular/core';
   templateUrl: './word-counter.component.html',
   styleUrls: ['./word-counter.component.sass']
 })
-export class WordCounter implements OnInit {
+export class WordCounter {
 
   @Input() maxCount: number;
   @Input() counter: number;
-
-  ngOnInit() {
-    
-  }
+  warningLimit = 0.75;
 
 }
 
