@@ -10,7 +10,7 @@
         <word-counter [maxCount]="MAXIMUM_WORDS_ALLOWED" [counter]="wordCount"></word-counter>
         <button 
             (click)="tweet()"
-            [disabled]="(wordCount >= MAXIMUM_WORDS_ALLOWED) || wordCount === 0 || isLoading" 
+            [disabled]="(wordCount > MAXIMUM_WORDS_ALLOWED) || wordCount === 0 || isLoading" 
             class="tweet-btn">Tweet</button>
     </div>
 </div>
