@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TweetModule } from './components/tweet/tweet.module';
+import { TweetService } from './services/tweet.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { TweetModule } from './components/tweet/tweet.module';
     BrowserModule,
     TweetModule
   ],
-  providers: [],
+  providers: [
+    TweetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
+import { TweetService } from 'src/app/services/tweet.service';
 
 @Component({
   selector: 'app-tweet-box',
@@ -17,9 +18,7 @@ export class TweetBoxComponent implements OnInit, OnDestroy, AfterViewInit {
   wordCount: number = 0;
   textValue: string;
 
-  tweetList: string[] = [];
-
-  constructor() { }
+  constructor(private tweetService: TweetService) { }
 
   ngOnInit(): void {
     
@@ -55,7 +54,7 @@ export class TweetBoxComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   tweet() {
-    this.tweetList.push(this.textValue);
+    this.tweetService.addTweet = this.textValue;
     this.textValue = '';
     this.wordCount = 0;
     
