@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TweetService } from 'src/app/services/tweet.service';
 import { WordCounter } from '../counter/word-counter.component';
 
 import { TweetBoxComponent } from './tweet-box.component';
@@ -9,7 +10,8 @@ describe('TweetBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TweetBoxComponent, WordCounter ]
+      declarations: [ TweetBoxComponent, WordCounter ],
+      providers: [TweetService]
     })
     .compileComponents();
   });
